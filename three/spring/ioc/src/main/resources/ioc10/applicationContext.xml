@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 继承 -->
+
+    <!-- 第一种情况:多个bean使用相同的属性，对这些属性注入相同的值 -->
+    <!-- 首先定义一个虚拟的父类，为该类注入对应的属性值 -->
+    <bean id="fatherBean" abstract="true">
+        <property name="username" value="admin"></property>
+    </bean>
+
+    <!-- 将具体的类继承该虚拟的父类 -->
+    <bean id="someBean" class="ioc10.SomeBean" parent="fatherBean">
+        <property name="username" value="alice"></property>
+        <!--<property name="password" value="123456"></property>-->
+    </bean>
+
+    <bean id="otherBean" class="ioc10.OtherBean" parent="fatherBean"></bean>
+
+
+    <!-- 第二种情况:同一个bean，但是拥有多个对象，这些对象中username属性相同，password不同 -->
+    <bean id="fatherSomeBean" class="ioc10.SomeBean" abstract="true">
+        <property name="username" value="admin"></property>
+    </bean>
+    <bean id="someBean1" parent="fatherSomeBean">
+        <property name="password" value="123"></property>
+    </bean>
+    <bean id="someBean2" parent="fatherSomeBean">
+        <property name="password" value="321"></property>
+    </bean>
+    <bean id="someBean3" parent="fatherSomeBean">
+        <property name="username" value="alice"></property>
+        <property name="password" value="123456"></property>
+    </bean>
+
+</beans>

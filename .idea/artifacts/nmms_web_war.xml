@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="nmms-web:war">
+    <output-path>$PROJECT_DIR$/nmms_hp/nmms-web/target</output-path>
+    <root id="archive" name="nmms-web-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="nmms-web:war exploded" />
+    </root>
+  </artifact>
+</component>

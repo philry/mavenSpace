@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置扫包 -->
+    <context:component-scan base-package="service.impl"></context:component-scan>
+    <!-- 配置数据源 -->
+    <context:property-placeholder location="classpath:dataSource.properties"></context:property-placeholder>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="url" value="${jdbc.url}"></property>
+        <property name="username" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>
+    <!-- 配置mybatis -->
+    <!--
+        配置SqlSessionFactory
+        SqlSessionFactoryBean
+     -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 此处配置一切与mybatis相关的操作 -->
+        <!-- 注入数据源 -->
+        <property name="dataSource" ref="dataSource"></property>
+        <!-- 配置别名 -->
+        <property name="typeAliasesPackage" value="entity"></property>
+        <!-- 注册mapper文件 -->
+        <property name="mapperLocations">
+            <list>
+                <!-- 支持通配符的方式 -->
+                <value>classpath:mapper/*.xml</value>
+            </list>
+        </property>
+    </bean>
+    <!--
+        方式二:执行别名操作
+        通过spring提供的后处理bean对接口所在的包做扫包操作
+        最终将该包下的所有的类名作为当前bean的id
+        首字母小写
+    -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="dao"></property>
+    </bean>
+    <!-- 事务配置 -->
+    <bean id="TransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!-- AOP注解配置 -->
+    <tx:annotation-driven transaction-manager="TransactionManager"></tx:annotation-driven>
+</beans>

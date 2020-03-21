@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="someService" class="ioc6.ObjectFactory" factory-method="getObject"></bean>
+
+    <bean id="JAVA_HOME" class="java.lang.System" factory-method="getenv"></bean>
+
+    <bean id="jh" class="java.lang.System" factory-method="getenv">
+        <constructor-arg type="java.lang.String">
+            <value>JAVA_HOME</value>
+        </constructor-arg>
+    </bean>
+</beans>

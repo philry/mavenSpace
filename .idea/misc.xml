@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/nmms_hp/nmms-web" />
+    <file type="web" url="file://$PROJECT_DIR$/spring_hp/spring-web" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_hp" />
+    <file type="web" url="file://$PROJECT_DIR$/three/HelloWeb" />
+    <file type="web" url="file://$PROJECT_DIR$/three/nmms/nmms-web" />
+    <file type="web" url="file://$PROJECT_DIR$/three/spring/spring-web" />
+    <file type="web" url="file://$PROJECT_DIR$/three/springmvc" />
+    <file type="web" url="file://$PROJECT_DIR$/web" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="parser" class="ioc14.SAXParserFactoryBean"></bean>
+
+    <bean id="date" class="java.util.Date">
+        <property name="year" value="118"></property>
+        <property name="month" value="0"></property>
+        <property name="date" value="1"></property>
+    </bean>
+</beans>

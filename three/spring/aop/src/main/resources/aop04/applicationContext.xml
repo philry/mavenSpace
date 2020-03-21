@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!-- AOP2.X -->
+
+    <!-- 目标类 -->
+    <bean id="someService" class="aop04.SomeServiceImpl"></bean>
+
+    <bean id="otherService" class="aop04.OtherServiceImpl"></bean>
+
+    <!-- 通知 -->
+    <bean id="logAdvice" class="aop04.LogAdvice"></bean>
+
+    <bean id="aroundAdvice" class="aop04.AroundAdvice"></bean>
+
+    <!--
+        引入新的命名空间
+        通过切点表达式对符合规则的bean做处理
+    -->
+    <aop:config>
+        <!--
+            配置切点表达式
+            用于配置切入点
+            id属性:当前切点表达式的唯一性标识符
+            expression属性:切点表达式的内容
+        -->
+        <!--<aop:pointcut id="pc1" expression="within(aop04.SomeServiceImpl)"></aop:pointcut>-->
+        <!--<aop:pointcut id="pc2" expression="within(aop04.OtherServiceImpl)"></aop:pointcut>-->
+
+
+        <!--<aop:pointcut id="pc3" expression="execution(void aop04.SomeServiceImpl.doSome())"></aop:pointcut>-->
+        <!--<aop:pointcut id="pc3" expression="execution(* aop04.*Impl.*(..))"></aop:pointcut>-->
+        <!--<aop:pointcut id="pc3" expression="execution(* aop04.*Impl.doSome(..))"></aop:pointcut>-->
+        <!--<aop:pointcut id="pc3" expression="execution(* aop04.SomeServiceImpl.doSome(..))"></aop:pointcut>-->
+        <!--<aop:pointcut id="pc3" expression="execution(* aop04.SomeServiceImpl.doSome(..))"></aop:pointcut>-->
+        <!--<aop:pointcut id="pc3" expression="execution(* aop04.SomeServiceImpl.doSome(..)) or execution(* aop04.OtherServiceImpl.doOther(..))"></aop:pointcut>-->
+        <aop:pointcut id="pc3" expression="execution(* aop04.*Impl.*(..)) and not execution(* aop04.SomeServiceImpl.doSome(..))"></aop:pointcut>
+
+        <!--
+            配置切面
+            即配置通知
+            ref属性:当前使用的通知是谁
+            子标签类型:
+                before:配置前置通知
+                after:配置后置通知
+                after-returning:配置正常返回通知
+                after-throwing:配置异常通知
+                    method属性:该通知下的哪一个方法作为指定类型的通知
+                    pointcut-ref属性:该通知是为哪个切面服务
+        -->
+        <!--<aop:aspect ref="logAdvice">-->
+            <!--<aop:before method="a" pointcut-ref="pc1"></aop:before>-->
+            <!--<aop:after-returning method="b" pointcut-ref="pc1"></aop:after-returning>-->
+            <!--<aop:after-throwing method="c" pointcut-ref="pc1"></aop:after-throwing>-->
+            <!--<aop:after method="d" pointcut-ref="pc1"></aop:after>-->
+        <!--</aop:aspect>-->
+        <!--<aop:aspect ref="logAdvice">-->
+            <!--<aop:before method="a" pointcut-ref="pc2"></aop:before>-->
+            <!--<aop:after-returning method="b" pointcut-ref="pc2"></aop:after-returning>-->
+            <!--<aop:after-throwing method="c" pointcut-ref="pc2"></aop:after-throwing>-->
+            <!--<aop:after method="d" pointcut-ref="pc2"></aop:after>-->
+        <!--</aop:aspect>-->
+
+
+        <!--<aop:aspect ref="logAdvice">-->
+            <!--<aop:before method="a" pointcut-ref="pc3"></aop:before>-->
+            <!--<aop:after-returning method="b" pointcut-ref="pc3"></aop:after-returning>-->
+            <!--<aop:after-throwing method="c" pointcut-ref="pc3"></aop:after-throwing>-->
+            <!--<aop:after method="d" pointcut-ref="pc3"></aop:after>-->
+        <!--</aop:aspect>-->
+
+        <!--
+            around:环绕通知
+        -->
+        <!--<aop:aspect ref="aroundAdvice">-->
+            <!--<aop:around method="around" pointcut-ref="pc3"></aop:around>-->
+        <!--</aop:aspect>-->
+        <!--<aop:aspect ref="aroundAdvice">-->
+            <!--<aop:around method="around" pointcut-ref="pc4"></aop:around>-->
+        <!--</aop:aspect>-->
+
+
+        <aop:aspect ref="aroundAdvice">
+            <aop:around method="around" pointcut-ref="pc3"></aop:around>
+        </aop:aspect>
+
+    </aop:config>
+
+
+
+</beans>

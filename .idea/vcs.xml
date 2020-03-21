@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/three/HelloFriend" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/three/HelloMaven" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/three/HelloThree" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/three/HelloWeb" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/three/nmms" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/three/parent" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/three/spring" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/three/springmvc" vcs="svn" />
+  </component>
+</project>

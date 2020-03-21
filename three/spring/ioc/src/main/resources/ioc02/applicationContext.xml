@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 其他bean的引用 -->
+    <bean id="otherBean" class="ioc02.OtherBean">
+        <property name="id" value="1"></property>
+        <property name="name" value="other"></property>
+    </bean>
+
+
+    <bean id="someBean" class="ioc02.SomeBean">
+        <property name="age" value="25"></property>
+        <!--<property name="otherBean" ref="otherBean"></property>-->
+        <property name="otherBean">
+            <ref bean="otherBean"></ref>
+        </property>
+    </bean>
+
+
+</beans>

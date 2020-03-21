@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 实例工厂创建对象 -->
+    <bean id="factory" class="ioc07.SomeServiceFactory"></bean>
+
+    <!--
+        通过工厂获取到对应的SomeService
+        factory-bean:表示当前的bean是通过哪一个工厂的bean来获取的
+    -->
+    <bean id="someService" factory-bean="factory" factory-method="getObject"></bean>
+
+
+    <!-- 练习  -->
+    <!-- 首先通过静态工厂获取对象Calender -->
+    <bean id="calender" class="java.util.Calendar" factory-method="getInstance"></bean>
+    <!-- 通过实例工厂获取到对应的Date对象 -->
+    <bean id="date" factory-bean="calender" factory-method="getTime"></bean>
+
+
+</beans>

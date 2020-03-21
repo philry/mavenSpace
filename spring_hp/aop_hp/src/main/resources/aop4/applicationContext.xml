@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="someService" class="aop4.SomeServiceImpl"></bean>
+    <bean id="otherService" class="aop4.OtherServiceImpl"></bean>
+    <bean id="logAdvice" class="aop4.LogAdvice"></bean>
+    <bean id="aroundAdvice" class="aop4.AroundAdvice"></bean>
+
+    <aop:config>
+       <!-- <aop:pointcut id="pc3" expression="execution(* aop4.*Impl.doSome(..))"></aop:pointcut>
+        <aop:pointcut id="pc4" expression="execution(* aop4.*Impl.doOther(..))"></aop:pointcut>-->
+        <!--<aop:pointcut id="pc5" expression="execution(* aop4.*Impl.do*(..))"></aop:pointcut>-->
+        <aop:pointcut id="pc6" expression="execution(* aop4.SomeServiceImpl.doSome(..)) or execution(* aop4.OtherServiceImpl.doOther(..))"></aop:pointcut>
+
+        <!-- <aop:aspect ref="logAdvice">
+            <aop:before method="a" pointcut-ref="pc3"></aop:before>
+            <aop:after-returning method="b" pointcut-ref="pc3"></aop:after-returning>
+            <aop:after-throwing method="c" pointcut-ref="pc3"></aop:after-throwing>
+            <aop:after method="d" pointcut-ref="pc3"></aop:after>
+        </aop:aspect>
+        <aop:aspect ref="logAdvice">
+            <aop:before method="a" pointcut-ref="pc4"></aop:before>
+            <aop:after-returning method="b" pointcut-ref="pc4"></aop:after-returning>
+            <aop:after-throwing method="c" pointcut-ref="pc4"></aop:after-throwing>
+            <aop:after method="d" pointcut-ref="pc4"></aop:after>
+        </aop:aspect>-->
+
+        <aop:aspect ref="logAdvice">
+            <aop:before method="a" pointcut-ref="pc6"></aop:before>
+            <aop:after-returning method="b" pointcut-ref="pc6"></aop:after-returning>
+            <aop:after-throwing method="c" pointcut-ref="pc6"></aop:after-throwing>
+            <aop:after method="d" pointcut-ref="pc6"></aop:after>
+        </aop:aspect>
+        <aop:aspect ref="aroundAdvice">
+            <aop:around method="around" pointcut-ref="pc6"></aop:around>
+        </aop:aspect>
+    </aop:config>
+</beans>

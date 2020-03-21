@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="someServiceTarget" class="aop03.SomeServiceImpl"></bean>
+
+    <!-- 前置通知 -->
+    <bean id="logAdvice" class="aop03.LogAdvice"></bean>
+
+    <!-- 后置通知 -->
+    <bean id="welcomeAdvice" class="aop03.WelcomeAdvice"></bean>
+
+    <!-- 异常通知 -->
+    <bean id="someExceptionAdvice" class="aop03.SomeExceptionAdvice"></bean>
+
+    <!-- 环绕通知 -->
+    <bean id="aroundAdvice" class="aop03.AroundAdvice"></bean>
+
+
+    <!-- 通过spring将通知注入到具体的目标类中 -->
+    <bean id="someService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <!-- 指定目标类 -->
+        <property name="target" ref="someServiceTarget"></property>
+        <!-- 代理的接口 -->
+        <property name="proxyInterfaces" value="aop03.SomeService"></property>
+        <!-- 交叉业务逻辑代码 -->
+        <property name="interceptorNames">
+            <list>
+                <value>logAdvice</value>
+                <value>welcomeAdvice</value>
+                <value>someExceptionAdvice</value>
+                <value>aroundAdvice</value>
+            </list>
+        </property>
+    </bean>
+</beans>

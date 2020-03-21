@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="fatherBean" abstract="true">
+        <property name="username" value="jack"></property>
+    </bean>
+    <bean id="someBean" class="ioc10.SomeBean" parent="fatherBean">
+        <property name="password" value="12345"></property>
+        <property name="username" value="lili"></property>
+    </bean>
+    <bean id="otherBean" class="ioc10.OtherBean" parent="fatherBean"></bean>
+
+</beans>

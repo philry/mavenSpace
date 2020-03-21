@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 简单值装配 -->
+
+    <!--<bean id="someBean" class="ioc01.SomeBean">-->
+        <!--<property name="id">-->
+            <!--<value>1</value>-->
+        <!--</property>-->
+        <!--<property name="name">-->
+            <!--<value>admin</value>-->
+        <!--</property>-->
+        <!--<property name="c">-->
+            <!--<value>java.lang.String</value>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+
+    <bean id="someBean" class="ioc01.SomeBean">
+        <property name="id" value="2"></property>
+        <property name="name" value="alice"></property>
+        <property name="c" value="java.lang.Exception"></property>
+    </bean>
+
+
+</beans>

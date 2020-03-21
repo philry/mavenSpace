@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="ioc17.User">
+        <property name="id" value="1"></property>
+        <property name="name" value="admin"></property>
+        <property name="password" value="123"></property>
+        <property name="phone" value="1234567890"></property>
+        <property name="address" value="江苏省-南京市"></property>
+        <property name="birthday"value="2018-01-01"></property>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <entry key="ioc17.Address" value="ioc17.AddressEditor"></entry>
+            </map>
+        </property>
+    </bean>
+</beans>

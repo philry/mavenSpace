@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HelloFriend/HelloFriend.iml" filepath="$PROJECT_DIR$/HelloFriend/HelloFriend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloMaven/HelloMaven.iml" filepath="$PROJECT_DIR$/HelloMaven/HelloMaven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloThree/HelloThree.iml" filepath="$PROJECT_DIR$/HelloThree/HelloThree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloWeb/HelloWeb.iml" filepath="$PROJECT_DIR$/HelloWeb/HelloWeb.iml" />
+    </modules>
+  </component>
+</project>

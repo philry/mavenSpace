@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/HelloMaven/pom.xml" />
+        <option value="$PROJECT_DIR$/MavenTwo/pom.xml" />
+        <option value="$PROJECT_DIR$/MavenThree/pom.xml" />
+        <option value="$PROJECT_DIR$/HelloWeb/pom.xml" />
+        <option value="$PROJECT_DIR$/MavenWeb/pom.xml" />
+        <option value="$PROJECT_DIR$/fgh/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/HelloMaven/MavenTwo/pom.xml" />
+        <option value="$PROJECT_DIR$/HelloWeb/MavenWeb/pom.xml" />
+        <option value="$PROJECT_DIR$/HelloWeb/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

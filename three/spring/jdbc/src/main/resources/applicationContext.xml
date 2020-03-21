@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!-- 配置数据源 -->
+
+    <!--
+        方式一:使用spring所提供的
+            DriverManagerDataSource
+    -->
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>-->
+        <!--<property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatis?useUnicode=true&amp;characterEncoding=utf-8"></property>-->
+        <!--<property name="username" value="root"></property>-->
+        <!--<property name="password" value=""></property>-->
+    <!--</bean>-->
+
+
+    <!-- 访问properties文件 -->
+    <!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+        <!--<property name="location" value="classpath:dataSource.properties"></property>-->
+    <!--</bean>-->
+    <context:property-placeholder location="classpath:dataSource.properties"></context:property-placeholder>
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="${jdbc.driver}"></property>-->
+        <!--<property name="url" value="${jdbc.url}"></property>-->
+        <!--<property name="username" value="${jdbc.username}"></property>-->
+        <!--<property name="password" value="${jdbc.password}"></property>-->
+    <!--</bean>-->
+
+
+    <!--
+        方式二:使用第三方数据库连接池
+            BasicDataSource
+    -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="url" value="${jdbc.url}"></property>
+        <property name="username" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+        <!-- 除了以上通用配置之外，我们还有一个可能会用到的额外配置 -->
+        <!-- 最大连接数 -->
+        <property name="maxActive" value="1"></property>
+        <!-- 初始化连接数 -->
+        <property name="initialSize" value="1"></property>
+        <!-- 最长等待时间 -->
+        <property name="maxWait" value="3000"></property>
+
+    </bean>
+
+    
+    <!-- JdbcTemplate -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    
+    <!-- UserDao -->
+    <bean id="userDao" class="dao.impl.UserDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+
+    <bean id="userDao2" class="dao.impl.UserDaoImpl2">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+</beans>

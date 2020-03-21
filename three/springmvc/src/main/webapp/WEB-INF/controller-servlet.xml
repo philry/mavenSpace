@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+    <context:component-scan base-package="controller"></context:component-scan>
+    <context:component-scan base-package="global"></context:component-scan>
+
+    <!-- HandlerMapping -->
+    <!--<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>-->
+    <!--<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>-->
+    <!-- HandlerAdapter -->
+    <!--<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>-->
+    <!--<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"></bean>-->
+
+
+    <!--
+        如果只是简单访问，可以省略
+        但是在某些时候，该配置一定要有
+        因此，我们在配置的时候最好加上
+     -->
+    <mvc:annotation-driven></mvc:annotation-driven>
+
+    <!--
+        Hanlder
+        此处的id是用于访问的url路径，因此需要加/
+    -->
+    <!--<bean id="/sayHello" class="controller.HelloController"></bean>-->
+
+    <!-- ViewResolver -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 配置具体的view -->
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+        <!-- 前缀 -->
+        <property name="prefix" value="/WEB-INF/pages/"></property>
+        <!-- 后缀 -->
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+
+    <!--
+        直接访问视图
+        path:表示访问命令
+        view-name:表示视图名
+    -->
+    <mvc:view-controller path="/showLogin" view-name="login"></mvc:view-controller>
+    <mvc:view-controller path="/showModel" view-name="model"></mvc:view-controller>
+    <mvc:view-controller path="/showUpload" view-name="upload"></mvc:view-controller>
+    <mvc:view-controller path="/showDownload" view-name="download"></mvc:view-controller>
+
+    <!-- 访问非WEB-INF下的资源 -->
+    <mvc:default-servlet-handler></mvc:default-servlet-handler>
+
+    <!--
+        访问指定的资源
+        location属性:表示访问的资源地址
+        mapping属性:表示访问命令
+            *:表示的是对应的文件名，只能访问一层路径
+            **:表示的是对应的文件名，可以访问多层路径
+    -->
+    <mvc:resources mapping="/img/**" location="/WEB-INF/images/"></mvc:resources>
+    <mvc:resources mapping="/img2/*" location="/images/"></mvc:resources>
+
+
+
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 拦截谁,当遇到什么样的请求的时候需要拦截 -->
+            <mvc:mapping path="/log/**"/>
+            <!-- 不拦截谁,当遇到哪些请求不进行拦截,可以配置多个 -->
+            <mvc:exclude-mapping path="/log/find"/>
+            <mvc:exclude-mapping path="/log/add"/>
+            <!-- 拦截器是谁 -->
+            <bean class="interceptor.LogInterceptor"></bean>
+        </mvc:interceptor>
+
+        <!--&lt;!&ndash; 登录检查拦截器 &ndash;&gt;-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<mvc:exclude-mapping path="/showLogin"/>-->
+            <!--<mvc:exclude-mapping path="/login"/>-->
+            <!--<bean class="interceptor.CheckLoginInterceptor"></bean>-->
+        <!--</mvc:interceptor>-->
+
+    </mvc:interceptors>
+
+
+    <!--
+        文件上传
+        id必须是multipartResolver
+     -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"></property>
+    </bean>
+
+
+
+
+</beans>

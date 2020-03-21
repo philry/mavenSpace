@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="address" class="ioc17.Address">
+        <property name="province" value="江苏省"></property>
+        <property name="city" value="南京市"></property>
+    </bean>
+
+    <bean id="user" class="ioc17.User">
+        <property name="id" value="1"></property>
+        <property name="username" value="admin"></property>
+        <property name="password" value="123456"></property>
+        <property name="phone" value="13812345678"></property>
+        <property name="address" value="江苏省-南京市"></property>
+        <property name="birthday" value="1990-01-01"></property>
+        <!--<property name="address" ref="address"></property>-->
+    </bean>
+
+
+
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <!--
+                    key:表示的是遇到什么类型的时候需要来找该转换规则
+                    value:转换规则是谁
+                 -->
+                <!-- Spring4以下版本用法 -->
+                <!--<entry key="ioc17.Address">-->
+                    <!--<bean class="ioc17.AddressEditor"></bean>-->
+                <!--</entry>-->
+                <!-- spring4版本用法 -->
+                <entry key="ioc17.Address" value="ioc17.AddressEditor"></entry>
+                <entry key="java.util.Date" value="ioc17.DateEditor"></entry>
+            </map>
+        </property>
+    </bean>
+
+</beans>

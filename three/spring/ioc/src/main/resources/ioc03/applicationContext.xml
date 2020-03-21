@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 集合类型装配 -->
+    <bean id="someBean" class="ioc03.SomeBean">
+        <property name="list">
+            <list>
+                <value>a</value>
+                <value>b</value>
+                <value>c</value>
+            </list>
+        </property>
+        <property name="arr">
+            <array>
+                <value>aa</value>
+                <value>bb</value>
+                <value>cc</value>
+            </array>
+        </property>
+        <property name="set">
+            <set>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="a">
+                    <value>1</value>
+                </entry>
+                <entry key="b">
+                    <value>2</value>
+                </entry>
+                <entry key="c">
+                    <value>3</value>
+                </entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="aa">11</prop>
+                <prop key="bb">22</prop>
+                <prop key="cc">33</prop>
+            </props>
+        </property>
+    </bean>
+
+
+
+    <bean id="someBean2" class="ioc03.SomeBean">
+        <property name="set">
+            <list>
+                <value>s1</value>
+                <value>s2</value>
+                <value>s3</value>
+            </list>
+        </property>
+        <property name="list">
+            <list>
+                <value>l1</value>
+                <value>l2</value>
+                <value>l3</value>
+            </list>
+        </property>
+        <property name="arr">
+            <list>
+                <value>a1</value>
+                <value>a2</value>
+                <value>a3</value>
+            </list>
+        </property>
+
+    </bean>
+
+
+
+</beans>

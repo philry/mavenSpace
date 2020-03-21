@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--
+        在此处对应所有的bean做管理
+        类似于原有的ObjectFactory
+        userDao=dao.impl.UserDaoImpl
+        userService=service.impl.UserServiceImpl
+     -->
+
+    <!--
+        每一个bean标签表示对于一个bean做管理
+        id属性:相当于ObjectFactory中的key
+        class属性:相当于ObjectFactory中的value
+        userDao=dao.impl.UserDaoImpl
+     -->
+    <bean id="userDao" class="dao.impl.UserDaoImpl"></bean>
+
+    <!--
+        不仅可以定义bean
+        还能对当前bean中的属性做处理
+        标签体中处理属性
+    -->
+    <bean id="userService" class="service.impl.UserServiceImpl">
+        <!--
+            每一个属性对应一个property标签
+            name:属性名,该属性名一定是当前bean中存在的属性的变量名
+            value:属性值，值是一个具体的数据
+            ref:属性值，值是一个已经由Spring所管理的bean的id
+         -->
+        <property name="userDao" ref="userDao"></property>
+    </bean>
+
+</beans>

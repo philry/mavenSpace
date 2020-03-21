@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 静态工厂创建对象 -->
+    <bean id="someService" class="ioc06.SomeServiceFactory" factory-method="getObject"></bean>
+
+
+    <bean id="env" class="java.lang.System" factory-method="getenv"></bean>
+
+    <bean id="javaHome" class="java.lang.System" factory-method="getenv">
+        <constructor-arg>
+            <value>JAVA_HOME</value>
+        </constructor-arg>
+    </bean>
+
+</beans>

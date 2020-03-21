@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="someBean" class="ioc3.SomeBean">
+        <property name="list">
+            <list>
+                <value>a</value>
+                <value>b</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>aa</value>
+                <value>bb</value>
+            </set>
+        </property>
+        <property name="arr">
+            <array>
+                <value>aaa</value>
+                <value>bbb</value>
+            </array>
+        </property>
+        <property name="map">
+           <map>
+               <entry key="a">
+                   <value>1</value>
+               </entry>
+               <entry key="b">
+                   <value>2</value>
+               </entry>
+           </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="aa">11</prop>
+                <prop key="bb">22</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

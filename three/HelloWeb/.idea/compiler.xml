@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="fgh" />
+        <module name="MavenThree" />
+        <module name="MavenTwo" />
+        <module name="MavenWeb" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="fgh" target="1.5" />
+      <module name="HelloMaven" target="1.5" />
+      <module name="HelloWeb" target="1.5" />
+      <module name="MavenThree" target="1.5" />
+      <module name="MavenTwo" target="1.5" />
+      <module name="MavenWeb" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

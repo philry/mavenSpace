@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HelloFriend/HelloFriend.iml" filepath="$PROJECT_DIR$/HelloFriend/HelloFriend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/HelloFriend/HelloFriend (1).iml" filepath="$PROJECT_DIR$/three/HelloFriend/HelloFriend (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloMaven/HelloMaven.iml" filepath="$PROJECT_DIR$/HelloMaven/HelloMaven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/HelloMaven/HelloMaven (1).iml" filepath="$PROJECT_DIR$/three/HelloMaven/HelloMaven (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloMotor/HelloMotor.iml" filepath="$PROJECT_DIR$/HelloMotor/HelloMotor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/HelloThree/HelloThree.iml" filepath="$PROJECT_DIR$/three/HelloThree/HelloThree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/HelloWeb/HelloWeb.iml" filepath="$PROJECT_DIR$/three/HelloWeb/HelloWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_hp/annnotation/annnotation.iml" filepath="$PROJECT_DIR$/spring_hp/annnotation/annnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/spring/annotation/annotation.iml" filepath="$PROJECT_DIR$/three/spring/annotation/annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/spring/aop/aop.iml" filepath="$PROJECT_DIR$/three/spring/aop/aop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_hp/aop_hp/aop_hp.iml" filepath="$PROJECT_DIR$/spring_hp/aop_hp/aop_hp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/parent/base/base.iml" filepath="$PROJECT_DIR$/three/parent/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/parent/dao/dao.iml" filepath="$PROJECT_DIR$/three/parent/dao/dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fuxi2020/fuxi2020.iml" filepath="$PROJECT_DIR$/fuxi2020/fuxi2020.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/spring/ioc/ioc.iml" filepath="$PROJECT_DIR$/three/spring/ioc/ioc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_hp/ioc_hp/ioc_hp.iml" filepath="$PROJECT_DIR$/spring_hp/ioc_hp/ioc_hp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_hp/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/spring_hp/jdbc/jdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/spring/jdbc/jdbc (1).iml" filepath="$PROJECT_DIR$/three/spring/jdbc/jdbc (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_hp/mybatis/mybatis.iml" filepath="$PROJECT_DIR$/spring_hp/mybatis/mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/spring/mybatis/mybatis (1).iml" filepath="$PROJECT_DIR$/three/spring/mybatis/mybatis (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/nmms/nmms.iml" filepath="$PROJECT_DIR$/three/nmms/nmms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nmms_hp/nmms-base/nmms-base.iml" filepath="$PROJECT_DIR$/nmms_hp/nmms-base/nmms-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/nmms/nmms-base/nmms-base (1) (com.itany.nmms).iml" filepath="$PROJECT_DIR$/three/nmms/nmms-base/nmms-base (1) (com.itany.nmms).iml" />
+      <module fileurl="file://$PROJECT_DIR$/nmms_hp/nmms-dao/nmms-dao.iml" filepath="$PROJECT_DIR$/nmms_hp/nmms-dao/nmms-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/nmms/nmms-dao/nmms-dao (1) (com.itany.nmms).iml" filepath="$PROJECT_DIR$/three/nmms/nmms-dao/nmms-dao (1) (com.itany.nmms).iml" />
+      <module fileurl="file://$PROJECT_DIR$/nmms_hp/nmms-service/nmms-service.iml" filepath="$PROJECT_DIR$/nmms_hp/nmms-service/nmms-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/nmms/nmms-service/nmms-service (1) (com.itany.nmms).iml" filepath="$PROJECT_DIR$/three/nmms/nmms-service/nmms-service (1) (com.itany.nmms).iml" />
+      <module fileurl="file://$PROJECT_DIR$/nmms_hp/nmms-web/nmms-web.iml" filepath="$PROJECT_DIR$/nmms_hp/nmms-web/nmms-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/nmms/nmms-web/nmms-web (1) (com.itany.nmms).iml" filepath="$PROJECT_DIR$/three/nmms/nmms-web/nmms-web (1) (com.itany.nmms).iml" />
+      <module fileurl="file://$PROJECT_DIR$/nmms_hp/nmms_hp.iml" filepath="$PROJECT_DIR$/nmms_hp/nmms_hp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/parent/parent.iml" filepath="$PROJECT_DIR$/three/parent/parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/parent/service/service.iml" filepath="$PROJECT_DIR$/three/parent/service/service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/spring/spring.iml" filepath="$PROJECT_DIR$/three/spring/spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_hp/spring-web/spring-web.iml" filepath="$PROJECT_DIR$/spring_hp/spring-web/spring-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/spring/spring-web/spring-web (1).iml" filepath="$PROJECT_DIR$/three/spring/spring-web/spring-web (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_hp/spring_hp.iml" filepath="$PROJECT_DIR$/spring_hp/spring_hp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/three/springmvc/springmvc.iml" filepath="$PROJECT_DIR$/three/springmvc/springmvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_hp/springmvc_hp.iml" filepath="$PROJECT_DIR$/springmvc_hp/springmvc_hp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />
+    </modules>
+  </component>
+</project>

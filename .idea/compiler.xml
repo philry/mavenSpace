@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="nmms-base" />
+        <module name="nmms-base (1) (com.itany.nmms)" />
+        <module name="nmms-dao" />
+        <module name="nmms-dao (1) (com.itany.nmms)" />
+        <module name="nmms-service" />
+        <module name="nmms-service (1) (com.itany.nmms)" />
+        <module name="nmms-web" />
+        <module name="nmms-web (1) (com.itany.nmms)" />
+        <module name="spring-web" />
+        <module name="spring-web (1)" />
+        <module name="springmvc" />
+        <module name="springmvc_hp" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="annnotation" target="1.5" />
+      <module name="annotation" target="1.5" />
+      <module name="aop" target="1.5" />
+      <module name="aop_hp" target="1.5" />
+      <module name="base" target="1.5" />
+      <module name="dao" target="1.5" />
+      <module name="HelloFriend" target="1.5" />
+      <module name="HelloFriend (1)" target="1.5" />
+      <module name="HelloMaven" target="1.5" />
+      <module name="HelloMaven (1)" target="1.5" />
+      <module name="HelloMotor" target="1.5" />
+      <module name="HelloThree" target="1.5" />
+      <module name="HelloWeb" target="1.5" />
+      <module name="ioc" target="1.5" />
+      <module name="ioc_hp" target="1.5" />
+      <module name="jdbc" target="1.5" />
+      <module name="jdbc (1)" target="1.5" />
+      <module name="mybatis" target="7" />
+      <module name="mybatis (1)" target="1.5" />
+      <module name="nmms" target="1.5" />
+      <module name="nmms-base" target="1.5" />
+      <module name="nmms-base (1) (com.itany.nmms)" target="1.5" />
+      <module name="nmms-dao" target="1.5" />
+      <module name="nmms-dao (1) (com.itany.nmms)" target="1.5" />
+      <module name="nmms-service" target="1.5" />
+      <module name="nmms-service (1) (com.itany.nmms)" target="1.5" />
+      <module name="nmms-web" target="1.5" />
+      <module name="nmms-web (1) (com.itany.nmms)" target="1.5" />
+      <module name="nmms_hp" target="1.5" />
+      <module name="parent" target="1.5" />
+      <module name="service" target="1.5" />
+      <module name="spring" target="1.5" />
+      <module name="spring-web" target="1.5" />
+      <module name="spring-web (1)" target="1.7" />
+      <module name="spring_hp" target="1.5" />
+      <module name="springmvc" target="1.5" />
+      <module name="springmvc_hp" target="1.5" />
+      <module name="web" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

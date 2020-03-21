@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="someBean" class="ioc5.SomeBean">
+        <constructor-arg>
+            <value>haha</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>20</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>gaga</value>
+        </constructor-arg>
+    </bean>
+</beans>
